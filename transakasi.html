@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>kot libabry</title>
+
+    <style>
+        body {
+            body {
+
+                margin: 0;
+                font-family: "Poppins", sans-serif;
+                color: #fa1099;
+            }
+
+            /* FIX AGAR HALAMAN BISA SCROLL SAMPAI BAWAH */
+            html,
+            body {
+                height: auto;
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+
+            header {
+                position: relative;
+                background-image: url('images/perpus.jpeg');
+                background-size: cover;
+                background-position: center;
+                height: 70vh;
+            }
+
+            .overlay {
+
+                border-radius: 5px;
+                margin-left: 20px;
+
+                text-align: left;
+                /* INI YANG PENTING */
+            }
+
+            .logo {
+                width: 100px;
+                /* ukuran logo */
+                margin-bottom: 20px;
+                margin-top: 20px;
+                margin-left: 20px;
+            }
+
+
+            .hero {
+                position: relative;
+                width: 100%;
+                height: 100%;
+
+
+            }
+
+        }
+
+        .welcome-box {
+            position: absolute;
+            height: 5px;
+            bottom: 80px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .welcome-box h1 {
+            color: pink;
+            font-size: 50px;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .welcome-box p {
+            margin-top: 10px;
+            font-size: 22px;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+        }
+
+        .bg {
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+            /* biar gambar nutup layar */
+        }
+
+        /* ================= ISI / CONTAINER ================= */
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        /* ================= JUDUL ================= */
+        .container h2 {
+            text-align: center;
+            color: #ec6cac;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        /* ================= FORM ================= */
+        #formTransaksi {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        /* full width */
+        #formTransaksi select,
+        #formTransaksi input[type="date"],
+        #formTransaksi button {
+            grid-column: span 2;
+        }
+
+        #formTransaksi input,
+        #formTransaksi select {
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+        }
+
+        #formTransaksi input:focus,
+        #formTransaksi select:focus {
+            outline: none;
+            border-color: rgb(253, 126, 209);
+            box-shadow: 0 0 5px rgba(236, 108, 172, 0.5);
+        }
+
+        #formTransaksi button {
+            background-color: #ec6cac;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 12px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #formTransaksi button:hover {
+            background-color: #e0559c;
+        }
+
+        /* ================= TABLE ================= */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        table th {
+            background-color: #f8c6dd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 768px) {
+            #formTransaksi {
+                grid-template-columns: 1fr;
+            }
+
+            #formTransaksi select,
+            #formTransaksi input[type="date"],
+            #formTransaksi button {
+                grid-column: span 1;
+            }
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 1px;
+            font-size: 12px;
+            color: #555;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div style="text-align: center; padding: 20x;">
+                <p style="font-size: 20px; font-weight: bold; margin: 10px 0;">
+                    <a href="index.html"
+                        style="color:white; text-decoration:none; margin:0 10px; font-weight:bold;">beranda</a>
+                    <a href="profil.html"
+                        style="color:white; text-decoration:none; margin:0 10px; font-weight:bold;">profil</a>
+                    <a href="login.html"
+                        style="color:white; text-decoration:none; margin:0 15px; font-weight:bold;">login</a>
+                    <a href="transakasi.html"
+                        style="color:rgb(245, 208, 232); text-decoration:none; margin:0 15px; font-weight:bold;">transaksi</a>
+        </nav>
+        <div class="overlay">
+
+            <img src="images/logo.png" class="logo">
+
+            <div class="hero">
+                <div class="welcome-box">
+                    <h1>Welcome to kot Library</h1>
+                    <p>Admin Panel Perpustakaan Digital</p>
+                </div>
+            </div>
+
+
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Form Transaksi Peminjaman</h2>
+
+            <form id="formTransaksi">
+                <input type="text" id="nama" placeholder="Nama Peminjam" required>
+                <input type="text" id="judulBuku" placeholder="Judul Buku" required>
+
+                <select id="tipeBuku" required>
+                    <option value="">-- Tipe Buku --</option>
+                    <option>Novel</option>
+                    <option>Pelajaran</option>
+                    <option>Umum</option>
+                    <option>Digital</option>
+                </select>
+
+                <input type="date" id="tglPinjam" required>
+                <button type="submit">Simpan</button>
+            </form>
+
+            <h2>Daftar Transaksi</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Nama</th>
+                        <th>Judul Buku</th>
+                        <th>Tipe Buku</th>
+                        <th>Tgl Pinjam</th>
+                        <th>Batas Pengembalian</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTransaksi"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <footer>
+
+        © 2026 kot Library - Admin Panel
+    </footer>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let no = 1;
+
+            document.getElementById("formTransaksi").addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                let nama = document.getElementById("nama").value;
+                let judul = document.getElementById("judulBuku").value;
+                let tipe = document.getElementById("tipeBuku").value;
+                let pinjam = document.getElementById("tglPinjam").value;
+
+                let tgl = new Date(pinjam);
+                tgl.setDate(tgl.getDate() + 7);
+                let kembali = tgl.toISOString().split("T")[0];
+
+                document.getElementById("dataTransaksi").innerHTML += `
+            <tr>
+                <td>${no++}</td>
+                <td>${nama}</td>
+                <td>${judul}</td>
+                <td>${tipe}</td>
+                <td>${pinjam}</td>
+                <td>${kembali}</td>
+            </tr>
+        `;
+
+                this.reset();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

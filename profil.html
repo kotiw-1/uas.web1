@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>kot libabry</title>
+
+    <style>
+        body {
+            body {
+                margin: 0;
+                font-family: "Poppins", sans-serif;
+                color: #fa1099;
+            }
+
+            /* FIX AGAR HALAMAN BISA SCROLL SAMPAI BAWAH */
+            html,
+            body {
+                height: auto;
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+
+            header {
+                position: relative;
+                background-image: url('images/perpus.jpeg');
+                background-size: cover;
+                background-position: center;
+                height: 70vh;
+            }
+
+            .overlay {
+
+                border-radius: 5px;
+                margin-left: 20px;
+
+                text-align: left;
+                /* INI YANG PENTING */
+            }
+
+            .logo {
+                width: 100px;
+                /* ukuran logo */
+                margin-bottom: 20px;
+                margin-top: 20px;
+                margin-left: 20px;
+            }
+
+        }
+
+
+
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            /* PENTING */
+
+        }
+
+        .bg {
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+            /* biar gambar nutup layar */
+        }
+
+        .welcome-box {
+            position: absolute;
+            height: 5px;
+            bottom: 80px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .welcome-box h1 {
+            color: pink;
+            font-size: 50px;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .welcome-box p {
+            margin-top: 10px;
+            font-size: 22px;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ===== KONTEN BERANDA ===== */
+        .section {
+            padding: 60px 20px;
+            background-color: #fff;
+        }
+
+        .section .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .card {
+            background-color: #ffe6f0;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h2 {
+            color: rgb(253, 126, 209);
+            margin-bottom: 15px;
+        }
+
+        .card p,
+        .card li {
+            color: #444;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+        }
+
+        .box {
+            border-radius: 15px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 1px;
+            font-size: 12px;
+            color: #555;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div style="text-align: center; padding: 20x;">
+                <p style="font-size: 20px; font-weight: bold; margin: 10px 0;">
+                    <a href="index.html"
+                        style="color:white; text-decoration:none; margin:0 10px; font-weight:bold;">beranda</a>
+                    <a href="profil.html"
+                        style="color:rgb(245,208,232); text-decoration:none; margin:0 10px; font-weight:bold;">profil</a>
+                    <a href="login.html"
+                        style="color:white; text-decoration:none; margin:0 15px; font-weight:bold;">login</a>
+                    <a href="transakasi.html"
+                        style="color:white; text-decoration:none; margin:0 15px; font-weight:bold;">transaksi</a>
+        </nav>
+        <div class="overlay">
+
+            <img src="images/logo.png" class="logo">
+
+            <div class="hero">
+                <div class="welcome-box">
+                    <h1>Welcome to kot Library</h1>
+                    <p>Admin Panel Perpustakaan Digital</p>
+                </div>
+    </header>
+    <!-- KONTEN BERANDA -->
+    <section class="section">
+        <div class="container">
+
+            <div class="card">
+                <h2>Profil Kami</h2>
+                <p>
+                    Selamat datang di <strong>Kot Library</strong>.
+                    Kot Library merupakan aplikasi perpustakaan digital berbasis web yang digunakan oleh
+                    <strong>admin</strong> untuk mengelola data koleksi buku dan transaksi perpustakaan
+                    secara mudah dan terstruktur.
+                </p>
+            </div>
+
+            <div class="card">
+                <h2>Visi dan Misi</h2>
+                <p><strong>Visi:</strong></p>
+                <p>
+                    Menjadi sistem perpustakaan digital yang membantu pengelolaan data perpustakaan secara efektif.
+                </p>
+
+                <p><strong>Misi:</strong></p>
+                <ul>
+                    <li>Menyediakan sistem pengelolaan data buku yang rapi</li>
+                    <li>Mempermudah admin dalam mencatat transaksi perpustakaan</li>
+                    <li>Mendukung pengelolaan data secara digital</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Tujuan Aplikasi</h2>
+                <p>
+                    Aplikasi ini bertujuan untuk membantu admin perpustakaan dalam melakukan pencatatan
+                    dan pengelolaan data secara efisien tanpa menggunakan sistem manual.
+                </p>
+
+
+            </div>
+            <footer>
+                © 2026 kot Library - Admin Panel
+
+            </footer>
+
+    </section>

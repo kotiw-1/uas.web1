@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>kot libabry</title>
+
+    <style>
+        body {
+            body {
+
+                margin: 0;
+                font-family: "Poppins", sans-serif;
+                color: #fa1099;
+            }
+
+            /* FIX AGAR HALAMAN BISA SCROLL SAMPAI BAWAH */
+            html,
+            body {
+                height: auto;
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+
+            header {
+                position: relative;
+                background-image: url('images/perpus.jpeg');
+                background-size: cover;
+                background-position: center;
+                height: 70vh;
+            }
+
+            .overlay {
+
+                border-radius: 5px;
+                margin-left: 20px;
+
+                text-align: left;
+                /* INI YANG PENTING */
+            }
+
+            .logo {
+                width: 100px;
+                /* ukuran logo */
+                margin-bottom: 20px;
+                margin-top: 20px;
+                margin-left: 20px;
+            }
+
+
+            .hero {
+                position: relative;
+                width: 100%;
+                height: 100%;
+
+
+            }
+
+        }
+
+        .welcome-box {
+            position: absolute;
+            height: 5px;
+            bottom: 80px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .welcome-box h1 {
+            color: pink;
+            font-size: 50px;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .welcome-box p {
+            margin-top: 10px;
+            font-size: 22px;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+        }
+
+        .bg {
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+            /* biar gambar nutup layar */
+        }
+
+
+
+
+        /* ===== LOGIN BOX ===== */
+        .login-box {
+            position: absolute;
+            top: 700px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            background: rgba(245, 208, 232, 0.95);
+
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* JUDUL LOGIN */
+        .login-box h2 {
+            margin: 0 0 15px;
+            color: #d63384;
+            font-size: 22px;
+
+        }
+
+        /* INPUT & BUTTON SEJAJAR */
+        .login-box input,
+        .login-box button {
+            width: 100%;
+            height: 45px;
+            padding: 0 12px;
+            margin-top: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        /* INPUT */
+        .login-box input {
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        .login-box input:focus {
+            border-color: #d63384;
+        }
+
+        /* BUTTON */
+        .login-box button {
+            background: #d63384;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .login-box button:hover {
+            background: rgb(253, 126, 209);
+        }
+
+        /* PESAN ERROR */
+        .login-box .error {
+            color: red;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 1px;
+            font-size: 12px;
+            color: #555;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div style="text-align: center; padding: 20x;">
+                <p style="font-size: 20px; font-weight: bold; margin: 10px 0;">
+                    <a href="index.html"
+                        style="color:rgba(245, 208, 232); text-decoration:none; margin:0 10px; font-weight:bold;">beranda</a>
+                    <a href="profil.html"
+                        style="color:white; text-decoration:none; margin:0 10px; font-weight:bold;">profil</a>
+                    <a href="login.html"
+                        style="color:white; text-decoration:none; margin:0 15px; font-weight:bold;">login</a>
+                    <a href="transakasi.html"
+                        style="color:white; text-decoration:none; margin:0 15px; font-weight:bold;">transaksi</a>
+        </nav>
+        <div class="overlay">
+
+            <img src="images/logo.png" class="logo">
+
+            <div class="hero">
+                <div class="welcome-box">
+                    <h1>Welcome to kot Library</h1>
+                    <p>Admin Panel Perpustakaan Digital</p>
+                </div>
+            </div>
+
+
+            <div class="login-box">
+                <h2>Form Login</h2>
+
+                <form onsubmit="return validasiLogin()">
+                    <input type="text" id="username" placeholder="Username">
+                    <input type="password" id="password" placeholder="Password">
+                    <button type="submit">Login</button>
+                </form>
+
+
+                <p id="error" class="error"></p>
+                <footer>
+                    © 2026 kot Library - Admin Panel
+                </footer>
+
+            </div>
+
+    </header>
+
+    <script>
+        function validasiLogin() {
+            const u = document.getElementById("username").value;
+            const p = document.getElementById("password").value;
+
+            if (u === "" || p === "") {
+                document.getElementById("error").innerText =
+                    "Username dan password tidak boleh kosong!";
+                return false; // STOP SUBMIT
+            }
+
+            // simulasi login berhasil
+            alert("Login berhasil");
+
+            // pindah ke halaman admin / transaksi
+            window.location.href = "transakasi.html";
+
+            return false; // PENTING: supaya gak reload
+        }
+    </script>
+
+
+
+    </script>
+
+</body>
+
+</html>
